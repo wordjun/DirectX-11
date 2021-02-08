@@ -1,4 +1,4 @@
-#include "RenderWindow.h"
+#include "Engine.h"
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "DirectXTK.lib")
 
@@ -18,10 +18,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 
 	//RenderWindow ex.
-	RenderWindow rw;
-	rw.Initialize(hInstance, "Title", "MyWindowClass", 1280, 720);
-	while (rw.ProcessMessages()) {
-		Sleep(50);
+	//RenderWindow rw;
+
+	Engine engine;
+	engine.Initialize(hInstance, "Title", "MyWindowClass", 800, 600);
+	while (engine.ProcessMessages()) {
+		engine.Update();
 	}
 	return 0;
 }
